@@ -1,0 +1,76 @@
+databaseChangeLog:
+  - changeSet:
+      id: "1"
+      author: Suleyman
+      changes:
+        - createTable:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(20)
+                  constraints:
+                    unique: true
+                    nullable: false
+
+  - changeSet:
+      id: "2"
+      author: Suleyman
+      changes:
+        - insert:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: name
+                  value: 'ROLE_USER'
+
+  - changeSet:
+      id: "3"
+      author: Suleyman
+      changes:
+        - insert:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 2
+              - column:
+                  name: name
+                  value: 'ROLE_ADMIN'
+
+  - changeSet:
+      id: "4"
+      author: Suleyman
+      changes:
+        - insert:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 3
+              - column:
+                  name: name
+                  value: 'ROLE_AUTHOR'
+
+  - changeSet:
+      id: "5"
+      author: Suleyman
+      changes:
+        - insert:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 4
+              - column:
+                  name: name
+                  value: 'ROLE_STUDENT'

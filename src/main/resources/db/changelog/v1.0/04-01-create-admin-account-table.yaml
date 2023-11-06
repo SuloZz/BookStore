@@ -1,0 +1,14 @@
+databaseChangeLog:
+    - changeSet:
+          id: 4
+          author: Suleyman
+          changes:
+              - sql:
+                    sql: INSERT INTO users (username, email, password,user_type) VALUES ('SuloZz', 'settarlisuleyman@gmail.com', '$2a$12$aiUazflhvuZCsOmmUTI8auxqoZxWLryK6UkoXY2jPfr6XO3meYX.q','User')
+
+    - changeSet:
+          id: "5"
+          author: Suleyman
+          changes:
+              - sql:
+                    sql: INSERT INTO user_roles (user_id, role_id) SELECT u.id, r.id FROM users u, roles r WHERE u.username = 'SuloZz' AND r.name = 'ROLE_ADMIN'
